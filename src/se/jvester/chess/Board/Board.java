@@ -1,6 +1,8 @@
 package se.jvester.chess.Board;
 
 import java.util.*;
+import java.util.stream.Collectors;
+
 import se.jvester.chess.*;
 import se.jvester.chess.Piece.King;
 import se.jvester.chess.Piece.Piece;
@@ -23,7 +25,9 @@ public class Board {
     }
 
     public King getKing(Color color) throws GameplayException {
-        Optional<Piece> king = getPieces().stream().filter(p -> p instanceof King && p.isColor(color)).findAny();
+        Optional<Piece> king = getPieces().stream()
+                .filter(p -> p instanceof King && p.isColor(color))
+                .findAny();
 
         if (!king.isPresent()) {
             throw GameplayException.noKingForColor(color);
@@ -57,16 +61,9 @@ public class Board {
     }
 
     public Collection<Piece> getPiecesInPath(Path path) throws OutOfBoundsException {
-        Collection<Piece> pieces = new ArrayList<>();
         List<Square> squaresInPath = getSquaresInPath(path);
 
-        for (Square square : squaresInPath) {
-            if (square.isOccupied()) {
-                pieces.add(square.getPiece());
-            }
-        }
-
-        return pieces;
+        return getPiecesFromSquares(squaresInPath);
     }
 
     public Collection<Square> getSquares() {
@@ -74,15 +71,7 @@ public class Board {
     }
 
     public Collection<Piece> getPieces() {
-        Collection<Piece> pieces = new ArrayList<>();
-
-        for (Square square : squares.values()) {
-            if (square.isOccupied()) {
-                pieces.add(square.getPiece());
-            }
-        }
-
-        return pieces;
+        return getPiecesFromSquares(squares.values());
     }
 
     private void generateSquares(int ranks, int files) {
@@ -111,5 +100,12 @@ public class Board {
 
     private String getCharForNumber(int i) {
         return i > -1 && i < 26 ? String.valueOf((char)(i + 65)) : null;
+    }
+
+    private Collection<Piece> getPiecesFromSquares(Collection<Square> squares) {
+        return squares.stream()
+                .filter(s -> s.isOccupied())
+                .map(s -> s.getPiece())
+                .collect(Collectors.toList());
     }
 }
