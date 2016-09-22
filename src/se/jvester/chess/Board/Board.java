@@ -1,17 +1,9 @@
 package se.jvester.chess.Board;
 
-import se.jvester.chess.GameplayException;
-import se.jvester.chess.OutOfBoundsException;
-import se.jvester.chess.Color;
+import java.util.*;
+import se.jvester.chess.*;
 import se.jvester.chess.Piece.King;
 import se.jvester.chess.Piece.Piece;
-
-import java.util.Collection;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Optional;
 
 public class Board {
     private int dimension;
