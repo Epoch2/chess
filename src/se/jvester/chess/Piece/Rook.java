@@ -1,7 +1,7 @@
-package se.jvester.chess.Pieces;
+package se.jvester.chess.Piece;
 
 import se.jvester.chess.Color;
-import se.jvester.chess.Pieces.Movement.PieceMovement;
+import se.jvester.chess.Piece.Movement.PieceMovement;
 
 public class Rook extends Piece {
     public Rook(Color color, PieceMovement movement) {

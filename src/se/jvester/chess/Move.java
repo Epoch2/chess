@@ -1,7 +1,7 @@
 package se.jvester.chess;
 
 import se.jvester.chess.Board.Square;
-import se.jvester.chess.Pieces.Piece;
+import se.jvester.chess.Piece.Piece;
 
 class Move {
     private Square origin;

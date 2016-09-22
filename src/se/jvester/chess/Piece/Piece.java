@@ -1,9 +1,9 @@
-package se.jvester.chess.Pieces;
+package se.jvester.chess.Piece;
 
 import se.jvester.chess.*;
 import se.jvester.chess.Board.Path;
 import se.jvester.chess.Board.Square;
-import se.jvester.chess.Pieces.Movement.PieceMovement;
+import se.jvester.chess.Piece.Movement.PieceMovement;
 
 abstract public class Piece {
     private Color color;
@@ -63,7 +63,7 @@ abstract public class Piece {
     }
 
     public String toString() {
-        return color + " " + getClass().getName();
+        return color + " " + getClass().getSimpleName();
     }
 
     private void assertCanMoveTo(Square square) throws IllegalMoveException {
@@ -80,7 +80,11 @@ abstract public class Piece {
     private void assertCanMoveToOccupiedSquare(Square square) throws IllegalMoveException {
         if (square.isOccupied()) {
             Piece pieceAlreadyInSquare = square.getPiece();
-            if (pieceAlreadyInSquare.isSameColorAs(this)) throw IllegalMoveException.ownPieceCollision(this, pieceAlreadyInSquare, square);
+
+            // Check if the piece already in the square is the same color as our piece (i.e. not available for capture)
+            if (pieceAlreadyInSquare.isSameColorAs(this)) {
+                throw IllegalMoveException.ownPieceCollision(this, pieceAlreadyInSquare, square);
+            }
         }
     }
 

@@ -1,8 +1,8 @@
 package se.jvester.chess.Board;
 
 import se.jvester.chess.*;
-import se.jvester.chess.Pieces.King;
-import se.jvester.chess.Pieces.Piece;
+import se.jvester.chess.Piece.King;
+import se.jvester.chess.Piece.Piece;
 
 import java.util.*;
 

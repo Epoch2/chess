@@ -1,4 +1,4 @@
-package se.jvester.chess.Pieces.Movement;
+package se.jvester.chess.Piece.Movement;
 
 /*
  *  FourWayPieceMovement will first navigate in a line along the X-axis, and then

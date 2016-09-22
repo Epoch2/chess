@@ -2,7 +2,7 @@ package se.jvester.chess;
 
 import se.jvester.chess.Board.Board;
 import se.jvester.chess.Board.Square;
-import se.jvester.chess.Pieces.Piece;
+import se.jvester.chess.Piece.Piece;
 
 import java.util.Collection;
 import java.util.Map;
