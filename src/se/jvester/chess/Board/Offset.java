@@ -9,14 +9,6 @@ public class Offset {
         this.y = y;
     }
 
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
     public boolean isHorizontal() {
         return x != 0;
     }
@@ -37,6 +29,14 @@ public class Offset {
     NOT as an offset that is equal in both X and Y directions. */
     public boolean isDiagonal() {
         return isHorizontal() && isVertical();
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
     }
 
     public String toString() {
