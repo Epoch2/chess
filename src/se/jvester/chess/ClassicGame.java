@@ -39,7 +39,7 @@ class ClassicGame extends Game {
             Optional<Piece> pieceThatWillCheck = getBoard().getPieces().stream().filter(p -> p.canMoveTo(target)).findAny();
 
             if (pieceThatWillCheck.isPresent()) {
-                throw new IllegalMoveException("Cannot move se.jvester.chess.Piece.King into checked position!");
+                throw new IllegalMoveException("Cannot move King into checked position!");
             }
         }
     }

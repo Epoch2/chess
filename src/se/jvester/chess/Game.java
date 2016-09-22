@@ -32,7 +32,7 @@ abstract class Game {
 
         piece.moveTo(target);
 
-        addMove(move);
+        recordMove(move);
         capturePiece(previousPiece);
     }
 
@@ -44,7 +44,7 @@ abstract class Game {
         return capturedPieces;
     }
 
-    protected void addMove(Move move) {
+    protected void recordMove(Move move) {
         moves.add(move);
     }
 
