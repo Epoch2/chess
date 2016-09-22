@@ -21,20 +21,22 @@ public class Offset {
         return x != 0;
     }
 
-    public boolean isOnlyHorizontal() {
-        return x != 0 && y == 0;
-    }
-
     public boolean isVertical() {
         return y != 0;
     }
 
-    public boolean isOnlyVertical() {
-        return y != 0 && x == 0;
+    public boolean isOnlyHorizontal() {
+        return isHorizontal() && !isVertical();
     }
 
+    public boolean isOnlyVertical() {
+        return isVertical() && !isHorizontal();
+    }
+
+    /* Diagonal is defined as having an offset in both X and Y axes,
+    NOT as an offset that is equal in both X and Y directions. */
     public boolean isDiagonal() {
-        return x != 0 && y != 0;
+        return isHorizontal() && isVertical();
     }
 
     public String toString() {
