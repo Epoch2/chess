@@ -1,8 +1,5 @@
 package se.jvester.chess;
 
-/**
- * Created by jv on 20/09/16.
- */
 public class GameplayException extends Exception {
     public GameplayException(String message) {
         super(message);
