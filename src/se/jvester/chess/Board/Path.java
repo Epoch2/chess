@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Path {
-    private Square destination;
     private List<Position> nodes = new ArrayList<>();
 
     public Path() {}
