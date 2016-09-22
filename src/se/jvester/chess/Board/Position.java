@@ -3,21 +3,21 @@ package se.jvester.chess.Board;
 import java.lang.Math;
 
 public class Position {
-    private int x;
-    private int y;
+    private int rank;
+    private int file;
 
-    public Position(int x, int y) {
-        this.x = x;
-        this.y = y;
+    public Position(int rank, int file) {
+        this.rank = rank;
+        this.file = file;
     }
 
     public boolean isDiagonalTo(Position position) {
-        return (getX() != position.getX() && y != position.getY());
+        return (getRank() != position.getRank() && file != position.getFile());
     }
 
     public Offset getOffsetTo(Position position) {
-        int xOffset = position.getX() - x;
-        int yOffset = position.getY() - y;
+        int xOffset = position.getRank() - rank;
+        int yOffset = position.getFile() - file;
 
         return new Offset(xOffset, yOffset);
     }
@@ -31,17 +31,17 @@ public class Position {
         return new Distance(xDistance, yDistance);
     }
 
-    public int getX() {
-        return x;
+    public int getRank() {
+        return rank;
     }
 
-    public int getY() {
-        return y;
+    public int getFile() {
+        return file;
     }
 
     @Override
     public String toString() {
-        return Integer.toString(x) + ":" + Integer.toString(y);
+        return Integer.toString(rank) + ":" + Integer.toString(file);
     }
 
     @Override
@@ -65,6 +65,6 @@ public class Position {
 
         Position position = (Position) obj;
 
-        return x == position.getX() && y == position.getY();
+        return rank == position.getRank() && file == position.getFile();
     }
 }

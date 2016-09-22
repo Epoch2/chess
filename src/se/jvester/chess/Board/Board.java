@@ -6,12 +6,10 @@ import se.jvester.chess.Piece.King;
 import se.jvester.chess.Piece.Piece;
 
 public class Board {
-    private int dimension;
     private Map<Position, Square> squares = new HashMap<>();
 
-    public Board(int dimension) {
-        this.dimension = dimension;
-        generateSquares();
+    public Board(int ranks, int files) {
+        generateSquares(ranks, files);
     }
 
     public void addPiece(Piece piece, Position position) throws GameplayException {
@@ -87,11 +85,11 @@ public class Board {
         return pieces;
     }
 
-    private void generateSquares() {
-        for (int rank = 0; rank < dimension; rank++) {
+    private void generateSquares(int ranks, int files) {
+        for (int rank = 0; rank < ranks; rank++) {
             String rankName = getNameForRank(rank);
 
-            for (int file = 0; file < dimension; file++) {
+            for (int file = 0; file < files; file++) {
                 String fileName = getNameForFile(file);
                 String squareName = rankName + fileName;
 

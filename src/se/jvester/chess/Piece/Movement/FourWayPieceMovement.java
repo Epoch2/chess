@@ -34,10 +34,10 @@ public class FourWayPieceMovement implements PieceMovement {
         int direction = Integer.signum(offset.getX());
 
         // We do not want to include our initial square
-        int x = origin.getX() + direction;
+        int x = origin.getRank() + direction;
 
-        for (; x != target.getX(); x += direction) {
-            Position node = new Position(x, origin.getY());
+        for (; x != target.getRank(); x += direction) {
+            Position node = new Position(x, origin.getFile());
             path.addNode(node);
         }
 
@@ -51,10 +51,10 @@ public class FourWayPieceMovement implements PieceMovement {
         int direction = Integer.signum(offset.getY());
 
         // We do not want to include our initial square
-        int y = origin.getY() + direction;
+        int y = origin.getFile() + direction;
 
-        for (; y != target.getY(); y += direction) {
-            Position node = new Position(origin.getX(), y);
+        for (; y != target.getFile(); y += direction) {
+            Position node = new Position(origin.getRank(), y);
             path.addNode(node);
         }
 

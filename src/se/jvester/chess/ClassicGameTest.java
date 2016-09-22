@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class ClassicGameTest {
     public static void main(String[] args) throws GameplayException {
-        Board board = new Board(8);
+        Board board = new Board(8, 8);
 
         Map<Color, Player> players = new HashMap<>();
         Player white = new Player();
