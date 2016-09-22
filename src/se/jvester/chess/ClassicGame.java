@@ -36,7 +36,9 @@ class ClassicGame extends Game {
         Square target = move.getTarget();
 
         if (piece instanceof King) {
-            Optional<Piece> pieceThatWillCheck = getBoard().getPieces().stream().filter(p -> p.canMoveTo(target)).findAny();
+            Optional<Piece> pieceThatWillCheck = getBoard().getPieces().stream()
+                    .filter(p -> p.canMoveTo(target))
+                    .findAny();
 
             if (pieceThatWillCheck.isPresent()) {
                 throw new IllegalMoveException("Cannot move King into checked position!");
