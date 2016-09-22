@@ -92,7 +92,7 @@ abstract public class Piece {
         try {
             boolean pathIsEmpty = square.getBoard().getPiecesInPath(path).isEmpty();
 
-            if (!pathIsEmpty && !canNavigateFreely()) {
+            if (!(pathIsEmpty || canNavigateFreely())) {
                 throw IllegalMoveException.pathBlocked(this, path);
             }
         } catch (OutOfBoundsException e) {
