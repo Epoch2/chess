@@ -18,7 +18,7 @@ public class Square {
         return position.isDiagonalTo(square.getPosition());
     }
 
-    public Offset getOffsetFrom(Square other) {
+    public Offset getOffsetTo(Square other) {
         return position.getOffsetTo(other.getPosition());
     }
 
@@ -42,6 +42,7 @@ public class Square {
         return piece;
     }
 
+    // TODO: Figure out how to avoid manipulating the state of piece
     public void setPiece(Piece piece) {
         this.piece = piece;
         piece.setSquare(this);

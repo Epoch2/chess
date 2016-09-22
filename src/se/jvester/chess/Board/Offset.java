@@ -17,8 +17,16 @@ public class Offset {
         return y;
     }
 
+    public boolean isHorizontal() {
+        return x != 0;
+    }
+
     public boolean isOnlyHorizontal() {
         return x != 0 && y == 0;
+    }
+
+    public boolean isVertical() {
+        return y != 0;
     }
 
     public boolean isOnlyVertical() {

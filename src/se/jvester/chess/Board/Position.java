@@ -11,13 +11,13 @@ public class Position {
         this.file = file;
     }
 
-    public boolean isDiagonalTo(Position position) {
-        return (getRank() != position.getRank() && file != position.getFile());
+    public boolean isDiagonalTo(Position other) {
+        return (getRank() != other.getRank() && file != other.getFile());
     }
 
-    public Offset getOffsetTo(Position position) {
-        int xOffset = position.getRank() - rank;
-        int yOffset = position.getFile() - file;
+    public Offset getOffsetTo(Position other) {
+        int xOffset = other.getRank() - rank;
+        int yOffset = other.getFile() - file;
 
         return new Offset(xOffset, yOffset);
     }
@@ -63,8 +63,8 @@ public class Position {
             return false;
         }
 
-        Position position = (Position) obj;
+        Position other = (Position) obj;
 
-        return rank == position.getRank() && file == position.getFile();
+        return rank == other.getRank() && file == other.getFile();
     }
 }

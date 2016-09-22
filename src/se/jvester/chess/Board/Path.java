@@ -23,7 +23,6 @@ public class Path {
 
     public List<Position> getNodes() {
         return nodes;
-
     }
 
     public boolean isEmpty() {
@@ -36,8 +35,8 @@ public class Path {
         for (Position node : nodes) {
             nodeString += node;
 
+            // Add an arrow (->) to the end if there are more nodes
             if (nodes.indexOf(node) != (nodes.size() - 1)) {
-                // Add an arrow (->) to the end if there are more nodes
                 nodeString += " -> ";
             }
         }
