@@ -88,14 +88,14 @@ public class Board {
     }
 
     private void generateSquares() {
-        for (int row = 0; row < dimension; row++) {
-            String rowName = getNameForRow(row);
+        for (int rank = 0; rank < dimension; rank++) {
+            String rankName = getNameForRank(rank);
 
-            for (int column = 0; column < dimension; column++) {
-                String columnName = getNameForColumn(column);
-                String squareName = rowName + columnName;
+            for (int file = 0; file < dimension; file++) {
+                String fileName = getNameForFile(file);
+                String squareName = rankName + fileName;
 
-                Position position = new Position(row, column);
+                Position position = new Position(rank, file);
                 Square square = new Square(this, position, squareName);
 
                 squares.put(position, square);
@@ -103,12 +103,12 @@ public class Board {
         }
     }
 
-    private String getNameForRow(int row) {
-        return getCharForNumber(row);
+    private String getNameForRank(int rank) {
+        return getCharForNumber(rank);
     }
 
-    private String getNameForColumn(int column) {
-        return Integer.toString(column + 1);
+    private String getNameForFile(int file) {
+        return Integer.toString(file + 1);
     }
 
     private String getCharForNumber(int i) {
