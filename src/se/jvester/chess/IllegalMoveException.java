@@ -1,3 +1,9 @@
+package se.jvester.chess;
+
+import se.jvester.chess.Board.Path;
+import se.jvester.chess.Board.Square;
+import se.jvester.chess.Pieces.Piece;
+
 public class IllegalMoveException extends GameplayException {
     private Piece piece;
 

@@ -1,3 +1,5 @@
+package se.jvester.chess;
+
 public enum Color {
     WHITE, BLACK;
 

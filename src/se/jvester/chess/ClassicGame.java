@@ -1,3 +1,13 @@
+package se.jvester.chess;
+
+import se.jvester.chess.Board.Board;
+import se.jvester.chess.Board.Position;
+import se.jvester.chess.Board.Square;
+import se.jvester.chess.Pieces.King;
+import se.jvester.chess.Pieces.Movement.FourWayPieceMovement;
+import se.jvester.chess.Pieces.Piece;
+import se.jvester.chess.Pieces.Rook;
+
 import java.util.Optional;
 import java.util.Map;
 
@@ -29,7 +39,7 @@ class ClassicGame extends Game {
             Optional<Piece> pieceThatWillCheck = getBoard().getPieces().stream().filter(p -> p.canMoveTo(target)).findAny();
 
             if (pieceThatWillCheck.isPresent()) {
-                throw new IllegalMoveException("Cannot move King into checked position!");
+                throw new IllegalMoveException("Cannot move se.jvester.chess.Pieces.King into checked position!");
             }
         }
     }

@@ -1,3 +1,10 @@
+package se.jvester.chess;
+
+import se.jvester.chess.Board.Board;
+import se.jvester.chess.Board.Position;
+import se.jvester.chess.Board.Square;
+import se.jvester.chess.Pieces.Piece;
+
 import java.util.HashMap;
 import java.util.Map;
 

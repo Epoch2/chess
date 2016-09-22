@@ -1,4 +1,6 @@
-class Offset {
+package se.jvester.chess.Board;
+
+public class Offset {
     private int x;
     private int y;
 

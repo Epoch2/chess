@@ -1,3 +1,7 @@
+package se.jvester.chess.Board;
+
+import se.jvester.chess.Pieces.Piece;
+
 public class Square {
     String name;
     Board board;

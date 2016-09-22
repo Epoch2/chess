@@ -1,6 +1,12 @@
+package se.jvester.chess.Board;
+
+import se.jvester.chess.*;
+import se.jvester.chess.Pieces.King;
+import se.jvester.chess.Pieces.Piece;
+
 import java.util.*;
 
-class Board {
+public class Board {
     private int dimension;
     private Map<Position, Square> squares = new HashMap<>();
 

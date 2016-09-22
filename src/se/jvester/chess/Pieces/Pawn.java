@@ -1,6 +1,12 @@
+package se.jvester.chess.Pieces;
+
+import se.jvester.chess.Color;
+import se.jvester.chess.Pieces.Movement.PieceMovement;
+import se.jvester.chess.Board.Square;
+
 import java.util.Optional;
 
-class Pawn extends Piece {
+public class Pawn extends Piece {
     private Optional<Integer> orientation;
 
     public Pawn(Color color, PieceMovement movement) {

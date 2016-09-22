@@ -1,3 +1,5 @@
+package se.jvester.chess.Board;
+
 import java.lang.Math;
 
 public class Position {

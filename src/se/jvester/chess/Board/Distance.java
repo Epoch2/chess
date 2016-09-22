@@ -1,3 +1,5 @@
+package se.jvester.chess.Board;
+
 public class Distance {
     private int x;
     private int y;

@@ -1,6 +1,9 @@
+package se.jvester.chess.Pieces.Movement;
+
+import se.jvester.chess.Board.Path;
+import se.jvester.chess.Board.Position;
+
 /**
- * Created by jv on 21/09/16.
- *
  * OctagonalPieceMovement can navigate all 8 possible ways, and can be used with any piece that requires
  * movement in all directions, for example
  *  * Queen

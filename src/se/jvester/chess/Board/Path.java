@@ -1,3 +1,5 @@
+package se.jvester.chess.Board;
+
 import java.util.List;
 import java.util.ArrayList;
 

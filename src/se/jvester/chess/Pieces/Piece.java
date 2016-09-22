@@ -1,4 +1,9 @@
-import java.util.List;
+package se.jvester.chess.Pieces;
+
+import se.jvester.chess.*;
+import se.jvester.chess.Board.Path;
+import se.jvester.chess.Board.Square;
+import se.jvester.chess.Pieces.Movement.PieceMovement;
 
 abstract public class Piece {
     private Color color;
@@ -81,7 +86,6 @@ abstract public class Piece {
 
     private void assertCanNavigatePath(Path path) throws IllegalMoveException {
         try {
-            List<Position> nodes = path.getNodes();
             boolean pathIsEmpty = square.getBoard().getPiecesInPath(path).isEmpty();
 
             if (!pathIsEmpty && !canNavigateFreely()) {

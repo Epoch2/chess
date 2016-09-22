@@ -1,4 +1,14 @@
-import java.util.*;
+package se.jvester.chess;
+
+import se.jvester.chess.Board.Board;
+import se.jvester.chess.Board.Square;
+import se.jvester.chess.Pieces.Piece;
+
+import java.util.Collection;
+import java.util.Map;
+import java.util.List;
+import java.util.HashMap;
+import java.util.ArrayList;
 
 abstract class Game {
     private Board board;
@@ -21,8 +31,9 @@ abstract class Game {
         Piece previousPiece = target.getPiece();
 
         piece.moveTo(target);
+
+        addMove(move);
         capturePiece(previousPiece);
-        check(piece);
     }
 
     public Color getTurn() {
@@ -31,6 +42,10 @@ abstract class Game {
 
     public List<Piece> getCapturedPieces() {
         return capturedPieces;
+    }
+
+    protected void addMove(Move move) {
+        moves.add(move);
     }
 
     protected Board getBoard() {
@@ -72,15 +87,6 @@ abstract class Game {
 
         if (player != getPlayerByColor(turn)) {
             throw GameplayException.notPlayerTurn(player);
-        }
-    }
-
-    private void check(Piece piece) throws GameplayException {
-        Color otherColor = Color.invert(piece.getColor());
-        King otherKing = board.getKing(otherColor);
-
-        if (piece.canMoveTo(otherKing)) {
-            check.put(otherColor, true);
         }
     }
 }

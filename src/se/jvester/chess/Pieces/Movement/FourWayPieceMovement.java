@@ -1,3 +1,5 @@
+package se.jvester.chess.Pieces.Movement;
+
 /*
  *  FourWayPieceMovement will first navigate in a line along the X-axis, and then
  *  in a line along the Y-axis. This movement can be used with any piece that
@@ -7,7 +9,11 @@
  *  * Rook
  */
 
-class FourWayPieceMovement implements PieceMovement {
+import se.jvester.chess.Board.Offset;
+import se.jvester.chess.Board.Path;
+import se.jvester.chess.Board.Position;
+
+public class FourWayPieceMovement implements PieceMovement {
     @Override
     public Path getPath(Position origin, Position target) {
         Offset offset = origin.getOffsetTo(target);

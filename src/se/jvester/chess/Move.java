@@ -1,3 +1,8 @@
+package se.jvester.chess;
+
+import se.jvester.chess.Board.Square;
+import se.jvester.chess.Pieces.Piece;
+
 class Move {
     private Square origin;
     private Square target;
