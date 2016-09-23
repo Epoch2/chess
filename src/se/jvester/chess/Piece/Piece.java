@@ -66,6 +66,10 @@ abstract public class Piece {
         return color + " " + getClass().getSimpleName();
     }
 
+    protected PieceMovement getMovement() {
+        return movement;
+    }
+
     private void assertCanMoveTo(Square square) throws IllegalMoveException {
         Path pathToSquare = getPathTo(square);
 

@@ -24,6 +24,10 @@ public class Path {
         return nodes;
     }
 
+    public int getNodeCount() {
+        return nodes.size();
+    }
+
     public boolean isEmpty() {
         return nodes.isEmpty();
     }

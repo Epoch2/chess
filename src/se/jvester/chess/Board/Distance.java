@@ -21,6 +21,10 @@ public class Distance {
         return y;
     }
 
+    public Distance increase(int dx, int dy) {
+        return new Distance(x + dx, y + dy);
+    }
+
     public boolean zero() {
         return x + y == 0;
     }
